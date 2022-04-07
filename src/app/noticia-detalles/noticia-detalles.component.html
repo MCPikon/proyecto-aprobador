@@ -11,7 +11,7 @@
             <li class="list-group-item list-group-item-primary"><b>Fecha:</b> {{noticia.fechaPub}}</li>
             <li class="list-group-item list-group-item-primary"><b>Descripcion:</b> {{noticia.descripcion}}</li>
             <li class="list-group-item list-group-item-primary"><b>Enlace: </b> <a href="{{noticia.enlace}}">{{noticia.enlace}}</a></li>
-            <li class="list-group-item list-group-item-primary"><button class="btn btn-success btn-lg me-2">Aprobar Noticia</button><button class="btn btn-danger btn-lg">Eliminar Noticia</button></li>
+            <li class="list-group-item list-group-item-primary"><button class="btn btn-success btn-lg me-2">Aprobar Noticia</button><button class="btn btn-danger btn-lg" (click)="deleteNoticia()">Eliminar Noticia</button></li>
         </ul>
     </div>
 </div>

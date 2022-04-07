@@ -18,4 +18,8 @@ export class NoticiasService {
     return this.http.get<Noticia>(this.ruta_server + 'obtenerNoticiaPorId.php?id=' + id);
   }
 
+  eliminarNoticia(id:number):Observable<string> {
+    return this.http.get<string>(this.ruta_server + "eliminarNoticia.php?id=" + id);
+  }
+
 }

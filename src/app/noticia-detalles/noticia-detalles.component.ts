@@ -24,4 +24,13 @@ export class NoticiaDetallesComponent implements OnInit {
     this.router.navigate(["listado"]);
   }
 
+  deleteNoticia() {
+    this.servicioNoticias.eliminarNoticia(this.noticia.id).subscribe(res => (res == "ok")?this.deleteOk():alert("no se pudo eliminar la noticia"));
+  }
+
+  deleteOk() {
+    alert("noticia eliminada correctamente, volviendo al listado...");
+    this.router.navigate(['listado']);
+  }
+
 }
