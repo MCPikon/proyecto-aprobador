@@ -4,6 +4,6 @@ export class Noticia {
     titulo?:string;
     descripcion?:string;
     enlace?:string;
-    enlaceImg?:string;
-    fechaPub?:string;
+    enlace_img?:string;
+    fecha_pub?:string;
 }

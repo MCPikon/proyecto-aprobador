@@ -22,4 +22,8 @@ export class ListadoComponent implements OnInit {
     this.router.navigate(["detalles", n.id]);
   }
 
+  verListadoPublicar() {
+    this.router.navigate(["listado-publicar"]);
+  }
+
 }

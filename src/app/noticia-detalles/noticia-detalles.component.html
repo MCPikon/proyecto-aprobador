@@ -2,16 +2,16 @@
 <button class="btn btn-primary" (click)="volverListado()">Volver a listado</button>
 <div class="row gy-3">
     <div class="col-auto col-lg-3 align-self-center">
-        <img class="d-block w-100" src="{{noticia.enlaceImg}}">
+        <img class="d-block w-100" src="{{noticia.enlace_img}}">
     </div>
     <div class="col-auto col-lg-9">
         <ul class="list-group">
             <li class="list-group-item list-group-item-primary"><h3>{{noticia.titulo}}</h3></li>
             <li class="list-group-item list-group-item-primary"><b>Medio:</b> {{noticia.medio}}</li>
-            <li class="list-group-item list-group-item-primary"><b>Fecha:</b> {{noticia.fechaPub}}</li>
+            <li class="list-group-item list-group-item-primary"><b>Fecha:</b> {{noticia.fecha_pub}}</li>
             <li class="list-group-item list-group-item-primary"><b>Descripcion:</b> {{noticia.descripcion}}</li>
             <li class="list-group-item list-group-item-primary"><b>Enlace: </b> <a href="{{noticia.enlace}}">{{noticia.enlace}}</a></li>
-            <li class="list-group-item list-group-item-primary"><button class="btn btn-success btn-lg me-2">Aprobar Noticia</button><button class="btn btn-danger btn-lg" (click)="deleteNoticia()">Eliminar Noticia</button></li>
+            <li class="list-group-item list-group-item-primary"><button class="btn btn-danger btn-lg me-2" (click)="deleteNoticia()">Eliminar Noticia</button><button class="btn btn-success btn-lg" (click)="aprobarNoticia()">Aprobar Noticia</button></li>
         </ul>
     </div>
 </div>

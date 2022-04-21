@@ -1,0 +1,17 @@
+<h3>Detalles</h3>
+<button class="btn btn-success" (click)="volverListadoPublicar()">Volver a listado</button>
+<div class="row gy-3">
+    <div class="col-auto col-lg-3 align-self-center">
+        <img class="d-block w-100" src="{{noticia.enlace_img}}">
+    </div>
+    <div class="col-auto col-lg-9">
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-success"><h3>{{noticia.titulo}}</h3></li>
+            <li class="list-group-item list-group-item-success"><b>Medio:</b> {{noticia.medio}}</li>
+            <li class="list-group-item list-group-item-success"><b>Fecha:</b> {{noticia.fecha_pub}}</li>
+            <li class="list-group-item list-group-item-success"><b>Descripcion:</b> {{noticia.descripcion}}</li>
+            <li class="list-group-item list-group-item-success"><b>Enlace: </b> <a href="{{noticia.enlace}}">{{noticia.enlace}}</a></li>
+            <li class="list-group-item list-group-item-success"><button class="btn btn-danger btn-lg me-2" (click)="devolverAlistado()">Devolver Noticia</button><button class="btn btn-primary btn-lg" (click)="publicarNoticia()">Publicar Noticia</button></li>
+        </ul>
+    </div>
+</div>

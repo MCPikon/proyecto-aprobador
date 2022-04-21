@@ -24,8 +24,20 @@ export class NoticiaDetallesComponent implements OnInit {
     this.router.navigate(["listado"]);
   }
 
-  deleteNoticia() {
+  aprobarNoticia() {
+    this.servicioNoticias.insertarNoticia(this.noticia).subscribe(res => (res == "ok")?this.aprobarOk():alert("no se pudo aprobar la noticia"));
+  }
+
+  aprobarOk() {
     this.servicioNoticias.eliminarNoticia(this.noticia.id).subscribe(res => (res == "ok")?this.deleteOk():alert("no se pudo eliminar la noticia"));
+    alert("noticia aprobada correctamente, volviendo al listado...");
+    this.router.navigate(['listado']);
+  }
+
+  deleteNoticia() {
+    if(confirm("¿Seguro que quieres eliminar la noticia?")) {
+      this.servicioNoticias.eliminarNoticia(this.noticia.id).subscribe(res => (res == "ok")?this.deleteOk():alert("no se pudo eliminar la noticia"));
+    }
   }
 
   deleteOk() {
