@@ -25,11 +25,27 @@ export class NoticiaPublicarDetallesComponent implements OnInit {
   }
 
   devolverAlistado() {
-    alert("devolver noticia a la tabla noticias y borrarla de noticiaspublicar");
+    if(confirm("¿Seguro que quieres devolver la noticia?")) {
+      this.servicioNoticias.insertarNoticia(this.noticia).subscribe(res => (res == "ok")?this.devolverOk():alert("no se pudo eliminar la noticia"));
+    }
+  }
+
+  devolverOk() {
+    this.servicioNoticias.eliminarNoticiaPublicar(this.noticia.id).subscribe(res => (res == "ok"));
+    alert("noticia devuelta correctamente, volviendo a listado...");
+    this.router.navigate(['listado-publicar']);
   }
 
   publicarNoticia() {
     alert("este botón sería para enviar la noticia directamente a publicar");
+  }
+
+  hayFoto() {
+    var foto = false;
+    if (this.noticia.enlace_img != "") {
+      foto = true;
+    }
+    return foto;
   }
 
 }

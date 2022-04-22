@@ -25,7 +25,7 @@ export class NoticiaDetallesComponent implements OnInit {
   }
 
   aprobarNoticia() {
-    this.servicioNoticias.insertarNoticia(this.noticia).subscribe(res => (res == "ok")?this.aprobarOk():alert("no se pudo aprobar la noticia"));
+    this.servicioNoticias.insertarNoticiaPublicar(this.noticia).subscribe(res => (res == "ok")?this.aprobarOk():alert("no se pudo aprobar la noticia"));
   }
 
   aprobarOk() {
@@ -43,6 +43,14 @@ export class NoticiaDetallesComponent implements OnInit {
   deleteOk() {
     alert("noticia eliminada correctamente, volviendo al listado...");
     this.router.navigate(['listado']);
+  }
+
+  hayFoto() {
+    var foto = false;
+    if (this.noticia.enlace_img != "") {
+      foto = true;
+    }
+    return foto;
   }
 
 }

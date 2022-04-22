@@ -3,7 +3,7 @@ require("../librerias_php/setup_redbean.php");
 
 $jsonInfo = json_decode(file_get_contents("php://input"));
 
-$noticia = R::dispense("noticias");
+$noticia = R::dispense("noticiaspublicar");
 
 $noticia -> medio = $jsonInfo -> medio;
 $noticia -> titulo = $jsonInfo -> titulo;

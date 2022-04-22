@@ -26,8 +26,16 @@ export class NoticiasService {
     return this.http.post<string>(this.ruta_server + "insertarNoticia.php", n);
   }
 
+  insertarNoticiaPublicar(n:Noticia):Observable<string> {
+    return this.http.post<string>(this.ruta_server + "insertarNoticiaPublicar.php", n);
+  }
+
   eliminarNoticia(id:number):Observable<string> {
     return this.http.get<string>(this.ruta_server + "eliminarNoticia.php?id=" + id);
+  }
+
+  eliminarNoticiaPublicar(id:number):Observable<string> {
+    return this.http.get<string>(this.ruta_server + "eliminarNoticiaPublicar.php?id=" + id);
   }
 
   obtenerNoticiaPublicarPorId(id:number):Observable<Noticia> {
