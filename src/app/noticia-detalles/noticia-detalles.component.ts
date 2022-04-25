@@ -29,7 +29,7 @@ export class NoticiaDetallesComponent implements OnInit {
   }
 
   aprobarOk() {
-    this.servicioNoticias.eliminarNoticia(this.noticia.id).subscribe(res => (res == "ok")?this.deleteOk():alert("no se pudo eliminar la noticia"));
+    this.servicioNoticias.eliminarNoticia(this.noticia.id).subscribe(res => (res == "ok"));
     alert("noticia aprobada correctamente, volviendo al listado...");
     this.router.navigate(['listado']);
   }

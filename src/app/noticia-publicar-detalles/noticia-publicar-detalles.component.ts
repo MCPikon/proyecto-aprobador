@@ -37,7 +37,7 @@ export class NoticiaPublicarDetallesComponent implements OnInit {
   }
 
   publicarNoticia() {
-    alert("este botón sería para enviar la noticia directamente a publicar");
+    alert("este botón sería para enviar la noticia directamente a publicar (por hacer)");
   }
 
   hayFoto() {
