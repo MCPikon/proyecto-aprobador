@@ -37,7 +37,12 @@ export class NoticiaPublicarDetallesComponent implements OnInit {
   }
 
   publicarNoticia() {
-    alert("este botón sería para enviar la noticia directamente a publicar (por hacer)");
+    this.servicioNoticias.postearNoticiaTwitter(this.noticia).subscribe(res => (res == "ok")?this.publicarOk():alert("no se pudo aprobar la noticia"));
+  }
+
+  publicarOk() {
+    alert("noticia publicada correctamente, volviendo al listado...");
+    this.router.navigate(['listado-publicar']);
   }
 
   hayFoto() {

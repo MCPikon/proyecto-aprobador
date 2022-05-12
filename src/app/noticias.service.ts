@@ -42,4 +42,8 @@ export class NoticiasService {
     return this.http.get<Noticia>(this.ruta_server + 'obtenerNoticiaPublicarPorId.php?id=' + id);
   }
 
+  postearNoticiaTwitter(n:Noticia):Observable<string> {
+    return this.http.post<string>(this.ruta_server + "postearNoticiaTwitter.php", n);
+  }
+
 }
