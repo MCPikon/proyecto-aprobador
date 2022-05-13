@@ -3,6 +3,12 @@
 use Coderjerk\BirdElephant\BirdElephant;
 use Coderjerk\BirdElephant\Compose\Tweet;
 require('..\vendor\autoload.php');
+require("../librerias_php/setup_redbean.php");
+
+$noticia = json_decode(file_get_contents("php://input"));
+
+$titulo = $noticia -> titulo;
+$link = $noticia -> enlace;
 
 // your credentials, should be passed in via $_ENV or similar, don't hardcode.
 $credentials = array(
@@ -16,7 +22,7 @@ $credentials = array(
 //instantiate the object
 $twitter = new BirdElephant($credentials);
 
-$tweet = (new Tweet) -> text("Tweeteando desde Angular jeje");
+$tweet = (new Tweet) -> text($titulo . " " . $link);
 
 $twitter->tweets()->tweet($tweet);
 
