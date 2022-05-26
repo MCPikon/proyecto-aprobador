@@ -2,7 +2,7 @@
 
 use Coderjerk\BirdElephant\BirdElephant;
 use Coderjerk\BirdElephant\Compose\Tweet;
-require('..\vendor\autoload.php');
+require('../vendor/autoload.php');
 require("../librerias_php/setup_redbean.php");
 
 $noticia = json_decode(file_get_contents("php://input"));
